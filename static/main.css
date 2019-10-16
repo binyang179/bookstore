@@ -1,0 +1,123 @@
+/*我的个性化商城主要样式表*/
+div.main {
+    width: 95%;
+    margin: auto;
+}
+
+a{
+    color:black;
+}
+
+div.head {
+    height: 90px;
+}
+
+div.head div.title {
+    font-size: 24px;
+    text-align: center;
+}
+div.head div.menu{
+    background:steelblue;
+    line-height: 40px;
+}
+
+div.head ul{
+    list-style: none;
+    margin:3px;
+}
+
+div.head ul li{
+    display: inline;
+}
+
+div.head ul li a{
+    color:whitesmoke;
+    padding:3px 7px;
+    text-decoration: none;
+}
+div.head ul li a:hover{
+    text-decoration: underline;
+}
+
+/*页脚*/
+div.foot{
+    line-height: 40px;
+    text-align: center;
+    font-size:12px;
+    clear: both;
+}
+
+/*图书列表布局*/
+div.books{
+
+}
+
+div.books dl{
+    width:380px;
+    height: 200px;
+    float:left;
+    list-style: none;
+    padding:0;
+}
+
+div.books dl dt{
+    width:210px;
+    float:left;
+    list-style: none;
+    margin:3px;
+    padding:2px;
+}
+
+div.books dd{
+    float:left;
+    width:130px;
+    list-style: none;
+    margin:3px;
+    padding:2px;
+}
+div.books dd span{
+    padding: 2px;
+    font-size:14px;
+}
+
+div.books dd span{
+    display: block;
+}
+
+/*分页*/
+div.paging{
+    clear:both;
+    text-align:center;
+    margin: auto;
+    width: 100%;
+    line-height: 43px;
+}
+
+input.form_control{
+    line-height: 23px;
+    padding: 3px;
+}
+input.btn{
+    padding:3px 7px;
+    font-size:14px;
+    background:steelblue;
+}
+
+/*订单信息*/
+ul.order_list{
+    list-style:none;
+    clear: both;
+    margin: 5px 17px;
+}
+ul.order_list li{
+    list-style:none;
+    width:120px;
+    float:left;
+}
+ul.order_list li.title{
+    list-style:none;
+    border-bottom:1px solid steelblue;
+    clear: both;
+    width: 95%;
+    padding:3px 9px;
+}

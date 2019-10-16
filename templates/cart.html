@@ -1,0 +1,52 @@
+{% extends "_layout.html" %}
+{% block content %}
+<h4>我的购物车</h4>
+<form action='{{url_for("cart.add_2_order")}}' method="post">
+    <table>
+        <tr>
+            <th>图书名称</th>
+            <th></th>
+            <th>数量</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td><img src="static/{{book[2]}}" width="120"/></td>
+            <td><span>{{book[1]}}</span><br/><span
+                    style="color:red; font-weight: 700; font-size: 18px;">&yen;{{book[3]}}</span><br/>
+                <span><a href="{{book[0]}}/remove">从购物车中删除</a></span>
+            </td>
+            <td><span><input type="button" id="btn_mins_{{book[0]}}" onclick='do_minus("{{book[0]}}")' value="-"/>&nbsp;
+                <input type="text"
+                                                                                             style="width: 60px;"
+                                                                                             id="cart_count_{{book[0]}}"
+                                                                                             name="count_{{book[0]}}_{{book[4]}}"
+                                                                                             value="1"/>&nbsp;<input
+                    type="button" onclick='do_add("{{book[0]}}")'
+                    value="+" id="btn_add_{{book[0]}}"/> </span>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3" style="text-align: right">
+                <input type="submit" value="立即购买"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    let do_minus = function (a) {
+        let id = '#cart_count_'+a;
+        let now_value = parseInt($(id).val());
+        if (now_value==0){
+            return false;
+        }
+        $(id).val(now_value-1);
+    }
+
+    let do_add = function(a){
+        let id = '#cart_count_'+a;
+        let now_value = parseInt($(id).val());
+        $(id).val(now_value+1);
+    }
+</script>
+{% endblock %}
